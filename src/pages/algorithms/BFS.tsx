@@ -342,12 +342,6 @@ fn bfs(graph: &HashMap<i32, Vec<i32>>, start: i32) -> Vec<i32> {
     }
   };
 
-  const resetAnimation = () => {
-    stopAnimation();
-    setCurrentStep(-1);
-    setGraph({ ...originalGraph });
-  };
-
   const generateRandomGraph = () => {
     const nodeCount = Math.floor(Math.random() * 4) + 4; // 4-7 nodes
     const nodes = Array.from({ length: nodeCount }, (_, i) => i + 1);

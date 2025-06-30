@@ -238,7 +238,6 @@ fn merge<T: Ord + Clone>(left: Vec<T>, right: Vec<T>) -> Vec<T> {
   const stopAnimation = () => { if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null; } setIsPlaying(false); setIsPaused(false); setCurrentStep(-1); setArray([...originalArray]); };
   const stepForward = () => { if (currentStep < sortSteps.length - 1) { const nextStep = currentStep + 1; setCurrentStep(nextStep); setArray(sortSteps[nextStep].array); } };
   const stepBackward = () => { if (currentStep > 0) { const prevStep = currentStep - 1; setCurrentStep(prevStep); setArray(sortSteps[prevStep].array); } else if (currentStep === 0) { setCurrentStep(-1); setArray([...originalArray]); } };
-  const resetAnimation = () => { stopAnimation(); setCurrentStep(-1); setArray([...originalArray]); };
   const generateRandomArray = () => { const newArray = Array.from({ length: 8 }, () => Math.floor(Math.random() * 100) + 1); setOriginalArray(newArray); setInputArray(newArray.join(',')); stopAnimation(); };
   const resetArray = () => { setOriginalArray([64, 34, 25, 12, 22, 11, 90]); setInputArray('64,34,25,12,22,11,90'); };
   const getElementClass = (index: number) => { const step = sortSteps[currentStep]; if (!step) return 'array-element default'; if (step.merging && step.merging.includes(index)) return 'merging'; if (step.left <= index && index <= step.right) return 'current'; return 'default'; };

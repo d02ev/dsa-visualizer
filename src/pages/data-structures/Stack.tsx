@@ -5,7 +5,6 @@ const Stack: React.FC = () => {
   const { isDarkMode } = useTheme();
   const [stack, setStack] = useState<number[]>([1, 2, 3, 4, 5]);
   const [inputValue, setInputValue] = useState<string>('');
-  const [isRunning, setIsRunning] = useState<boolean>(false);
 
   const pushElement = () => {
     if (inputValue.trim() && !isNaN(Number(inputValue))) {

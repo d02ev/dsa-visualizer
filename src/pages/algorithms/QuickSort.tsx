@@ -309,12 +309,6 @@ fn partition<T: Ord>(arr: &mut [T]) -> usize {
     }
   };
 
-  const resetAnimation = () => {
-    stopAnimation();
-    setCurrentStep(-1);
-    setArray([...originalArray]);
-  };
-
   const generateRandomArray = () => {
     const newArray = Array.from({ length: 8 }, () => Math.floor(Math.random() * 100) + 1);
     setOriginalArray(newArray);

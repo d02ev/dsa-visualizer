@@ -5,7 +5,6 @@ const Graph: React.FC = () => {
   const { isDarkMode } = useTheme();
   const [graphData, setGraphData] = useState<number[]>([1, 2, 3, 4, 5]);
   const [inputValue, setInputValue] = useState<string>('');
-  const [isRunning, setIsRunning] = useState<boolean>(false);
 
   const addNode = () => {
     if (inputValue.trim() && !isNaN(Number(inputValue))) {

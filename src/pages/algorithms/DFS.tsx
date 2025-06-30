@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 
 // Add CSS styles for graph visualization
@@ -71,7 +71,6 @@ const DFS: React.FC = () => {
   const [startNode, setStartNode] = useState<string>('1');
   const [speed] = useState<number>(1000);
   const [activeLanguage, setActiveLanguage] = useState<string>('javascript');
-  const intervalRef = useRef<number | null>(null);
 
   // Generate DFS steps for the current graph
   const generateDFSSteps = (graphData: { nodes: number[]; edges: number[][]; start: number }): DFSStep[] => {
@@ -306,12 +305,6 @@ public class DFS {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
     }
-  };
-
-  const resetAnimation = () => {
-    setIsPlaying(false);
-    setIsPaused(false);
-    setCurrentStep(-1);
   };
 
   const generateRandomGraph = () => {
