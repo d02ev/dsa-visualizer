@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSidebarToggle }) => {
 
           {/* GitHub Link */}
           <a
-            href="https://github.com"
+            href="https://github.com/d02ev"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline-light btn-sm"
